@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转星空</title>
+    <script src="starsRotate.js"></script>
+</head>
+<body style="margin: 0;overflow: hidden;background: #000">
+<canvas id="starsRotate"></canvas>
+<script>
+    var sr = new StarsRotate({
+        canvas: document.getElementById('starsRotate'),
+        hollow: 150,
+        w:window.innerWidth,
+        h:window.innerHeight
+    });
+    window.onresize = function () {
+        sr.reLoadSize(window.innerWidth,window.innerHeight)
+    }
+</script>
+</body>
+</html>
