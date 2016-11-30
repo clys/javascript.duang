@@ -1,0 +1,6 @@
+.planetarySystem{
+    display: inline-block;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
