@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <title>planetary system</title>
 
-    <link href="planetarySystem.css" rel="stylesheet">
+    <!--<link href="planetarySystem.css" rel="stylesheet">-->
+    <link href="planetarySystem.less" rel="stylesheet/less" type="text/css">
+    <script src="https://cdn.bootcss.com/less.js/2.7.1/less.min.js"></script>
+
     <script src="planetarySystem.js"></script>
 </head>
-<body>
-<div id="planetarySystem"></div>
+<body style="background: black">
+<div id="planetarySystem" class="a"></div>
 
 <script>
-
+    new planetarySystem(document.getElementById('planetarySystem'));
 </script>
 </body>
 </html>

@@ -1,0 +1,120 @@
+@defaultTrackRadius: 30px;
+@defaultTrackColor: rgba(255, 255, 255, .15);
+@defaultPlanetRadius: 7px;
+@defaultPlanetColor: #ffffff;
+
+.planetarySystem {
+  display: inline-block;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  .ps-center {
+    left: 50%;
+    top: 50%;
+    width: 1px;
+    height: 1px;
+    position: relative;
+  }
+
+  .ps-track {
+    z-index: 2;
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid @defaultTrackColor;
+    border-radius: 50%;
+    width: @defaultTrackRadius*2+1;
+    height: @defaultTrackRadius*2+1;
+    top: -@defaultTrackRadius;
+    left: -@defaultTrackRadius;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -webkit-animation: ps-orbit 3s linear infinite;
+    -moz-animation: ps-orbit 3s linear infinite;
+  }
+  .ps-core {
+    z-index: 55;
+    position: relative;
+    display: block;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    margin-left: -1px;
+    margin-top: -1px;
+  }
+
+  .ps-planet {
+    z-index: 3;
+    display: block;
+    position: absolute;
+    background: @defaultPlanetColor;
+    border-radius: 50%;
+    height: @defaultPlanetRadius*2+1;
+    width: @defaultPlanetRadius*2+1;
+    top: -@defaultPlanetRadius;
+    left: -@defaultPlanetRadius;
+    cursor: pointer;
+
+  }
+
+  .ps-sun {
+    border: 0;
+    width: 1px;
+    height: 1px;
+    top: 0;
+    left: 0;
+    -webkit-animation: initial !important;
+    -moz-animation: initial !important;
+    .ps-planet {
+      background: orange;
+      height: 50px;
+      width: 50px;
+      top: -25px;
+      left: -25px;
+      -webkit-animation: ps-glow 1.5s linear infinite;
+      -moz-animation: ps-glow 1.5s linear infinite;
+    }
+  }
+
+  .orbit() {
+    0% {
+      -webkit-transform: rotate(0deg)
+    }
+    50% {
+      -webkit-transform: rotate(-180deg)
+    }
+    100% {
+      -webkit-transform: rotate(-360deg)
+    }
+  }
+
+  .glow() {
+    0% {
+      box-shadow: none
+    }
+    50% {
+      background: #FFEB00;
+      box-shadow: 0 0 20px orange
+    }
+    100% {
+      box-shadow: none
+    }
+  }
+
+  @-webkit-keyframes ps-orbit {
+    .orbit;
+  }
+  @-moz-keyframes ps-orbit {
+    .orbit;
+  }
+
+  @-webkit-keyframes ps-glow {
+    .glow;
+  }
+  @-moz-keyframes ps-glow {
+    .glow;
+
+  }
+
+}

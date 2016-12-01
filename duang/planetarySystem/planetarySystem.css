@@ -1,6 +1,1 @@
-.planetarySystem{
-    display: inline-block;
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-}
+.planetarySystem{display:inline-block;overflow:hidden;width:200px;height:200px}.planetarySystem .center{left:50%;top:50%;width:1px;height:1px;position:relative}.planetarySystem .track{z-index:2;border-radius:50%;display:block;position:absolute;border:1px solid rgba(255,255,255,0.15);box-sizing:border-box;-moz-box-sizing:border-box;-webkit-transform-origin:50% 50%;-moz-transform-origin:50% 50%}.planetarySystem .planet{z-index:3;cursor:pointer;border-radius:25px;background:black;display:block;position:absolute;top:-5px;right:45%}.planetarySystem .sun{border:0}.planetarySystem .sun .planet{background:orange;height:50px;width:50px;top:-25px;right:-25px;-webkit-animation:glow 1.5s linear infinite;-moz-animation:glow 1.5s linear infinite}@-webkit-keyframes orbit{0%{-webkit-transform:rotate(0deg)}50%{-webkit-transform:rotate(-180deg)}100%{-webkit-transform:rotate(-360deg)}}@-moz-keyframes orbit{0%{-webkit-transform:rotate(0deg)}50%{-webkit-transform:rotate(-180deg)}100%{-webkit-transform:rotate(-360deg)}}@-webkit-keyframes glow{0%{box-shadow:none}50%{background:#ffeb00;box-shadow:0 0 20px #ffa500}100%{box-shadow:none}}@-moz-keyframes glow{0%{box-shadow:none}50%{background:#ffeb00;box-shadow:0 0 20px #ffa500}100%{box-shadow:none}}
