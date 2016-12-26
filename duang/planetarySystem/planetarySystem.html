@@ -11,10 +11,31 @@
     <script src="planetarySystem.js"></script>
 </head>
 <body style="background: black">
-<div id="planetarySystem" class="a"></div>
+<div id="planetarySystem" style="position: absolute;left: 50%;top: 50%"></div>
 
 <script>
-    new planetarySystem(document.getElementById('planetarySystem'));
+    var planetarySystem = new PlanetarySystem(document.getElementById('planetarySystem'));
+    planetarySystem.addPlanet({
+        trackRadius: 50,
+        trackColor: '#aabbcc',
+        planetRadius: 7,
+        planetColor: '#ccbbaa',
+        cycle: 5
+    });
+    planetarySystem.addMoon(0, {
+        trackRadius: 15,
+        trackColor: 'pink',
+        planetRadius: 3,
+        planetColor: 'red',
+        cycle: 1
+    });
+    planetarySystem.addMoon(0, {
+        trackRadius: 25,
+        trackColor: 'red',
+        planetRadius: 4,
+        planetColor: 'pink',
+        cycle: 2
+    });
 </script>
 </body>
 </html>

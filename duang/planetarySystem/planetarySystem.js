@@ -30,27 +30,6 @@
         init: function () {
             var that = this;
             that.build();
-            that.addPlanet({
-                trackRadius: 50,
-                trackColor: '#aabbcc',
-                planetRadius: 7,
-                planetColor: '#ccbbaa',
-                cycle: 5
-            });
-            that.addMoon(0, {
-                trackRadius: 15,
-                trackColor: 'pink',
-                planetRadius: 3,
-                planetColor: 'red',
-                cycle: 1
-            });
-            that.addMoon(0, {
-                trackRadius: 25,
-                trackColor: 'red',
-                planetRadius: 4,
-                planetColor: 'pink',
-                cycle: 2
-            });
         },
         build: function () {
             var that = this, container = that.pool.container;
@@ -136,5 +115,5 @@
         }
     };
 
-    context.planetarySystem = publics;
+    context.PlanetarySystem = publics;
 })(window);
