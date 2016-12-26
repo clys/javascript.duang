@@ -40,6 +40,19 @@
                  </div>';
             that.pool.containerSub = container.getElementsByClassName('ps-center')[0];
         },
+        setList: function (list) {
+            var that = this, one;
+            list = JSON.parse(JSON.stringify(list));
+            for (var i = 0, len = list.length; i < len; i++) {
+                one = list[i];
+                that.addPlanet(one);
+                if (one.list) {
+                    for (var li = 0, lLen = one.list.length; li < lLen; li++) {
+                        that.addMoon(i, one.list[li]);
+                    }
+                }
+            }
+        },
         addPlanet: function (config) {
             var that = this;
             that.add(that.pool.containerSub, 0, config);

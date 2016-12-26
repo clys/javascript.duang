@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>planetary system</title>
 
-    <!--<link href="planetarySystem.css" rel="stylesheet">-->
-    <link href="planetarySystem.less" rel="stylesheet/less" type="text/css">
-    <script src="https://cdn.bootcss.com/less.js/2.7.1/less.min.js"></script>
+    <link href="planetarySystem.css" rel="stylesheet">
+    <!--<link href="planetarySystem.less" rel="stylesheet/less" type="text/css">-->
+    <!--<script src="https://cdn.bootcss.com/less.js/2.7.1/less.min.js"></script>-->
 
     <script src="planetarySystem.js"></script>
 </head>
@@ -15,27 +15,48 @@
 
 <script>
     var planetarySystem = new PlanetarySystem(document.getElementById('planetarySystem'));
-    planetarySystem.addPlanet({
-        trackRadius: 50,
-        trackColor: '#aabbcc',
-        planetRadius: 7,
-        planetColor: '#ccbbaa',
-        cycle: 5
-    });
-    planetarySystem.addMoon(0, {
-        trackRadius: 15,
-        trackColor: 'pink',
-        planetRadius: 3,
-        planetColor: 'red',
-        cycle: 1
-    });
-    planetarySystem.addMoon(0, {
-        trackRadius: 25,
-        trackColor: 'red',
-        planetRadius: 4,
-        planetColor: 'pink',
-        cycle: 2
-    });
+    planetarySystem.setList([
+        {
+            trackRadius: 50,
+            trackColor: '#aabbcc',
+            planetRadius: 7,
+            planetColor: '#ccbbaa',
+            cycle: 1,
+            list: [
+                {
+                    trackRadius: 15,
+                    trackColor: 'pink',
+                    planetRadius: 3,
+                    planetColor: 'red',
+                    cycle: 0.5
+                }
+            ]
+        },
+        {
+            trackRadius: 90,
+            trackColor: '#aabbcc',
+            planetRadius: 9,
+            planetColor: 'pink',
+            cycle: 3,
+            list: [
+                {
+                    trackRadius: 15,
+                    trackColor: 'pink',
+                    planetRadius: 2,
+                    planetColor: '#fff',
+                    cycle: 1
+                },
+                {
+                    trackRadius: 25,
+                    trackColor: 'red',
+                    planetRadius: 3,
+                    planetColor: 'pink',
+                    cycle: 2
+                }
+            ]
+        }
+    ]);
+
 </script>
 </body>
 </html>
