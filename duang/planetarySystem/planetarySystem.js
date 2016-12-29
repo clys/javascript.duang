@@ -33,6 +33,9 @@
         },
         build: function () {
             var that = this, container = that.pool.container;
+            that.pool.indexInfo = {
+                '0': 0
+            };
             container.setAttribute('class', container.getAttribute('class') + ' planetarySystem');
             container.innerHTML =
                 '<div class="ps-center">\
@@ -43,6 +46,7 @@
         setList: function (list) {
             var that = this, one;
             list = JSON.parse(JSON.stringify(list));
+            that.build();
             for (var i = 0, len = list.length; i < len; i++) {
                 one = list[i];
                 that.addPlanet(one);
